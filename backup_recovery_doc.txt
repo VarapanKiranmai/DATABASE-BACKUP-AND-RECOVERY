@@ -1,0 +1,35 @@
+**Database Backup and Recovery Documentation**
+
+**Project:** Database Backup and Recovery  
+**Date:** [Insert Date]  
+**Prepared by:** [Your Name]  
+
+**1. Introduction:**  
+This document explains the process of backing up and restoring databases to ensure data integrity and availability in case of failure.
+
+**2. Backup Process:**  
+- **MySQL Backup:**  
+  - Used `mysqldump` to create a backup file.  
+  - Example command: `mysqldump -u root -p mydatabase > backup.sql`  
+- **PostgreSQL Backup:**  
+  - Used `pg_dump` to generate a compressed backup file.  
+  - Example command: `pg_dump -U postgres -F c -b -v -f backup.pgsql mydatabase`  
+
+**3. Recovery Process:**  
+- **MySQL Restore:**  
+  - Used `mysql` to restore the database.  
+  - Example command: `mysql -u root -p mydatabase < backup.sql`  
+- **PostgreSQL Restore:**  
+  - Used `pg_restore` to load data back into PostgreSQL.  
+  - Example command: `pg_restore -U postgres -d mydatabase -v backup.pgsql`  
+
+**4. Verification Steps:**  
+- Check database integrity after restoration.  
+- Run test queries to confirm data consistency.  
+
+**5. Conclusion:**  
+A well-defined backup and recovery strategy ensures business continuity and protects against data loss.  
+
+**Attachments:**  
+- Backup and Recovery Scripts  
+- Screenshots of backup and restore commands execution  
